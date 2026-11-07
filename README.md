@@ -12,6 +12,46 @@ encoder with SVD positional encodings embeds the nodes of both graphs. A multi-k
 Discrepancy (MMD) layer compares the two sets of node embeddings, and a multilayer perceptron maps the
 MMD values to the predicted distance. Once trained, it needs no iterative optimization at test time.
 
+## Results
+
+The numbers below are from the paper, which has the full experiments. Every error is a relative
+error against the reference GW values; lower is better.
+
+**In-domain prediction** (Table 2 of the paper; the best result per dataset is in bold).
+
+| Method | MUTAG | BZR | COX2 | DHFR |
+|---|---|---|---|---|
+| Sampled GW | 0.4527 | 0.2916 | 0.4256 | 0.3223 |
+| Spar-GW (8n) | 0.2259 | 0.3448 | 0.4927 | 0.3690 |
+| Spar-GW (4n) | 0.5571 | 0.6771 | 0.8721 | 0.6849 |
+| Spar-GW (2n) | 0.6895 | 0.6609 | 0.7924 | 0.6447 |
+| WormholeGW (β=1) | 0.5416 ± 0.0194 | 0.5029 ± 0.0156 | 0.5908 ± 0.0304 | 0.4909 ± 0.0098 |
+| WormholeGW (β=0) | 0.5046 ± 0.0171 | 0.4142 ± 0.0216 | 0.3997 ± 0.0098 | 0.4238 ± 0.0058 |
+| NeuralGW-Naive | 0.2882 ± 0.0034 | 0.2796 ± 0.0102 | 0.3016 ± 0.0161 | 0.2587 ± 0.0079 |
+| NeuralGW | **0.1494** ± 0.0343 | **0.1239** ± 0.0248 | **0.1251** ± 0.0046 | **0.1365** ± 0.0328 |
+
+**Number of MMDs** (Figure 2 of the paper). More than a single MMD can help NeuralGW, although the
+best number of MMDs depends on the dataset; S=0 is exactly the NeuralGW-Naive variant.
+
+<p align="center"><img src="assets/sensitivity_mmd_layer.png" width="520" alt="Relative error of NeuralGW on MUTAG, BZR, COX2 and DHFR for S = 0, 1, 3, 5 and 9 MMDs in the MMD layer"></p>
+
+**Cross-domain prediction** (Figure 3 of the paper). Trained on one molecular dataset (row) and tested on
+another (column): NeuralGW on the left, WormholeGW on the right.
+
+<p align="center"><img src="assets/cross_domain_heatmap.png" width="720" alt="Heatmaps of the relative error of cross-domain prediction for NeuralGW and WormholeGW across MUTAG, BZR, COX2 and DHFR"></p>
+
+**Runtime** (Table 5 of the paper). Time per graph pair, with every method on the same CPU, an Apple M1 Pro.
+The pairs are REDDIT-BINARY graphs with 500–1000 nodes: NeuralGW was timed on all 666 test pairs, the
+reference solver on 5 of them and the sampling methods on 3. NeuralGW's time includes its SVD encoding;
+on an NVIDIA RTX 3090 GPU it takes 5.4 ms per pair.
+
+| Method | ms per pair |
+|---|---:|
+| NeuralGW (incl. SVD encoding) | 33.9 |
+| Reference GW (conditional gradient) | 297 |
+| Sampled GW (ε=0.01) | 22,352 |
+| Spar-GW (8n, ε=0.01) | 96,342 |
+
 ## Setup
 
 ```bash
