@@ -1,7 +1,11 @@
 # NeuralGW
 
+[![NeurIPS 2026](https://img.shields.io/badge/NeurIPS-2026-blue)](https://neurips.cc/virtual/2026/loc/sydney/poster/151656)
+
 Code for **Bridging Graph Worlds: Neural Approximation of Gromov-Wasserstein Distances**
 (Dong Qiao, Chris Ding, Jicong Fan; NeurIPS 2026).
+
+![Architecture of NeuralGW. The GIN and the Transformer are shared by the two input graphs; the Transformer attends over the nodes of both graphs jointly.](assets/neuralgw.png)
 
 NeuralGW predicts the Gromov-Wasserstein (GW) distance between two graphs. A shared GIN-Transformer
 encoder with SVD positional encodings embeds the nodes of both graphs. A multi-kernel Maximum Mean
