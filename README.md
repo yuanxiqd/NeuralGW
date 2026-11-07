@@ -1,9 +1,6 @@
-# NeuralGW
+# NeuralGW <a href="https://neurips.cc/virtual/2026/loc/sydney/poster/151656"><img align="right" height="48" src="assets/neurips_logo.png" alt="NeurIPS logo"></a>
 
-<p align="center">
-  <a href="https://neurips.cc/virtual/2026/loc/sydney/poster/151656"><img src="assets/neurips_logo.png" height="80" alt="NeurIPS logo"></a><br>
-  <a href="https://neurips.cc/virtual/2026/loc/sydney/poster/151656"><img src="https://img.shields.io/badge/NeurIPS-2026-blue" alt="NeurIPS 2026"></a>
-</p>
+[![NeurIPS 2026](https://img.shields.io/badge/NeurIPS-2026-blue)](https://neurips.cc/virtual/2026/loc/sydney/poster/151656)
 
 Code for **Bridging Graph Worlds: Neural Approximation of Gromov-Wasserstein Distances**
 (Dong Qiao, Chris Ding, Jicong Fan; NeurIPS 2026).
