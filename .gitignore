@@ -1,0 +1,33 @@
+# Local artifacts (large or regenerable)
+checkpoints/
+data/
+logs/
+logs_*/
+results/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+.env
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Editor (optional local settings; keep if you prefer)
+.vscode/
+.cursor/
+
+# Claude Code local state (worktrees, scheduled task locks, etc.)
+.claude/
+# Claude Code per-checkout permission state (keep tracked plans/, ignore the local settings)
+.claude/settings.local.json
+.claude/worktrees/

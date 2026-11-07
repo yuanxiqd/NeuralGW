@@ -1,0 +1,14 @@
+# Tested with Python 3.12. Install the PyTorch and PyTorch Geometric builds for your CUDA version.
+torch==2.10.0
+torch_geometric==2.7.0
+POT==0.9.6.post1
+numpy==2.4.1
+scipy==1.17.0
+scikit-learn==1.8.0
+networkx==3.6.1
+pandas==3.0.2
+tqdm==4.67.1
+
+# Optional: graph-kernel baselines (scripts/compute_kernels.py, scripts/cluster_eval.py) and plots.
+grakel
+matplotlib
