@@ -40,17 +40,13 @@ another (column): NeuralGW on the left, WormholeGW on the right.
 
 <p align="center"><img src="assets/cross_domain_heatmap.png" width="720" alt="Heatmaps of the relative error of cross-domain prediction for NeuralGW and WormholeGW across MUTAG, BZR, COX2 and DHFR"></p>
 
-**Runtime** (Table 5 of the paper). Time per graph pair, with every method on the same CPU, an Apple M1 Pro.
-The pairs are REDDIT-BINARY graphs with 500–1000 nodes: NeuralGW was timed on all 666 test pairs, the
-reference solver on 5 of them and the sampling methods on 3. NeuralGW's time includes its SVD encoding;
-on an NVIDIA RTX 3090 GPU it takes 5.4 ms per pair.
+**Runtime** (Table 5 of the paper, drawn as on the poster). Time per graph pair, with every method on the
+same CPU, an Apple M1 Pro; the factor in parentheses is how much slower a method is than NeuralGW. The
+pairs are REDDIT-BINARY graphs with 500–1000 nodes: NeuralGW was timed on all 666 test pairs, the
+reference solver (POT's conditional gradient) on 5 of them and the sampling methods (ε = 0.01) on 3.
+NeuralGW's time includes its SVD encoding; on an NVIDIA RTX 3090 GPU it takes 5.4 ms per pair.
 
-| Method | ms per pair |
-|---|---:|
-| NeuralGW (incl. SVD encoding) | 33.9 |
-| Reference GW (conditional gradient) | 297 |
-| Sampled GW (ε=0.01) | 22,352 |
-| Spar-GW (8n, ε=0.01) | 96,342 |
+<p align="center"><img src="assets/runtime_same_cpu.png" width="760" alt="Time per graph pair on one Apple M1 Pro CPU, log scale: NeuralGW 33.9 ms, reference GW 297 ms (8.8 times slower), Sampled GW 22,352 ms (659 times), Spar-GW (8n) 96,342 ms (2842 times)"></p>
 
 ## Setup
 
