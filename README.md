@@ -49,19 +49,7 @@ WormholeGW and NeuralGW rows are means over five seeds. On COLLAB and REDDIT-BIN
 is close to that driven by the reference and slightly above it on ACC and ARI; on MUTAG, NeuralGW stays
 slightly below the reference and behind Spar-GW at a high sampling rate.
 
-| Method | MUTAG ACC | MUTAG NMI | MUTAG ARI | COLLAB ACC | COLLAB NMI | COLLAB ARI | REDDIT-BIN. ACC | REDDIT-BIN. NMI | REDDIT-BIN. ARI |
-|---|---|---|---|---|---|---|---|---|---|
-| GW (reference) | 0.8457 | 0.3751 | 0.4736 | 0.6000 | 0.3085 | 0.2731 | 0.7415 | 0.3016 | 0.2287 |
-| PPA | 0.8404 | 0.3400 | 0.4570 | 0.6000 | 0.3085 | 0.2731 | 0.7075 | 0.2399 | 0.1664 |
-| RW kernel | 0.7766 | 0.3082 | 0.3026 | 0.5867 | 0.3756 | 0.3125 | 0.6803 | 0.2410 | 0.1203 |
-| WL kernel | 0.7074 | 0.1360 | 0.1678 | 0.3867 | 0.1030 | 0.0136 | 0.5918 | 0.0771 | 0.0221 |
-| WL-OA kernel | 0.6809 | 0.1774 | 0.1237 | 0.3867 | 0.1030 | 0.0136 | 0.5782 | 0.0049 | 0.0117 |
-| Sampled GW | 0.7500 | 0.2393 | 0.2464 | 0.5733 | 0.3050 | 0.2651 | 0.7619 | 0.3248 | 0.2703 |
-| Spar-GW (8n) | 0.8351 | 0.3247 | 0.4421 | 0.5733 | 0.3050 | 0.2651 | 0.6463 | 0.0078 | −0.0365 |
-| WormholeGW (β=1) | 0.5479 | 0.0038 | 0.0046 | 0.5973 | 0.2617 | 0.2140 | 0.6912 | 0.2229 | 0.1443 |
-| WormholeGW (β=0) | 0.5670 | 0.0039 | 0.0082 | 0.5813 | 0.2633 | 0.2186 | 0.6952 | 0.2301 | 0.1471 |
-| NeuralGW (in-domain) | 0.8319 | 0.3158 | 0.4329 | 0.6080 | 0.3255 | 0.2881 | 0.7769 | 0.2808 | 0.3033 |
-| NeuralGW (transferred) | 0.8309 | 0.3138 | 0.4305 | 0.5893 | 0.3424 | 0.2514 | 0.7224 | 0.1559 | 0.1974 |
+<p align="center"><img src="assets/clustering_table.png" width="760" alt="Table 4 of the paper: ACC, NMI and ARI of spectral clustering on MUTAG (188 graphs, K=2), COLLAB (75 graphs, K=3) and REDDIT-BINARY (147 graphs, K=2) for GW (reference), PPA, the RW, WL and WL-OA kernels, Sampled GW, Spar-GW (8n), WormholeGW (beta=1 and beta=0) and NeuralGW (in-domain and transferred)"></p>
 
 **Runtime** (Table 5 of the paper, drawn as on the poster). Time per graph pair, with every method on the
 same CPU, an Apple M1 Pro; the factor in parentheses is how much slower a method is than NeuralGW. The
