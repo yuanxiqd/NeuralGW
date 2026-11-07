@@ -19,16 +19,7 @@ error against the reference GW values; lower is better.
 
 **In-domain prediction** (Table 2 of the paper; the best result per dataset is in bold).
 
-| Method | MUTAG | BZR | COX2 | DHFR |
-|---|---|---|---|---|
-| Sampled GW | 0.4527 | 0.2916 | 0.4256 | 0.3223 |
-| Spar-GW (8n) | 0.2259 | 0.3448 | 0.4927 | 0.3690 |
-| Spar-GW (4n) | 0.5571 | 0.6771 | 0.8721 | 0.6849 |
-| Spar-GW (2n) | 0.6895 | 0.6609 | 0.7924 | 0.6447 |
-| WormholeGW (β=1) | 0.5416 ± 0.0194 | 0.5029 ± 0.0156 | 0.5908 ± 0.0304 | 0.4909 ± 0.0098 |
-| WormholeGW (β=0) | 0.5046 ± 0.0171 | 0.4142 ± 0.0216 | 0.3997 ± 0.0098 | 0.4238 ± 0.0058 |
-| NeuralGW-Naive | 0.2882 ± 0.0034 | 0.2796 ± 0.0102 | 0.3016 ± 0.0161 | 0.2587 ± 0.0079 |
-| NeuralGW | **0.1494** ± 0.0343 | **0.1239** ± 0.0248 | **0.1251** ± 0.0046 | **0.1365** ± 0.0328 |
+<p align="center"><img src="assets/indomain_table.png" width="760" alt="Table 2 of the paper: relative error of in-domain prediction on MUTAG, BZR, COX2 and DHFR for Sampled GW, Spar-GW (8n, 4n and 2n), WormholeGW (beta=1 and beta=0), NeuralGW-Naive and NeuralGW; the best result per dataset, in bold, is NeuralGW"></p>
 
 **Number of MMDs** (Figure 2 of the paper). More than a single MMD can help NeuralGW, although the
 best number of MMDs depends on the dataset; S=0 is exactly the NeuralGW-Naive variant.
